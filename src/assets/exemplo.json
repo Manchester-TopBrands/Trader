@@ -1,0 +1,129 @@
+{
+    "Timestamp": 1610475667,
+    "Status": 2,
+    "Quotes": {
+        "Arbit": {
+            "Bid": 614.23,
+            "Ask": 614.54,
+            "LClose": 500,
+            "MaxBid": 0.14,
+            "MinAsk": -0.23
+        },
+        "Win": {
+            "Bid": 120145,
+            "Ask": 120150,
+            "LClose": 119975
+        },
+        "Wdo": {
+            "Bid": 5535.5,
+            "Ask": 5540,
+            "LClose": 5520
+        },
+        "Ewz": {
+            "Bid": 31.15,
+            "Ask": 31.16,
+            "LClose": 31.67
+        }
+    },
+    "Strategies": [{
+            "Desc": {
+                "Dif": 0.15,
+                "Difm": 0.05,
+                "Mindif": 0,
+                "PropWin": 5,
+                "PropWdo": 2,
+                "Period": 200
+            },
+            "Position": {
+                "State": 1,
+                "Win": 5,
+                "WinPx": 115200,
+                "Wdo": 2,
+                "WdoPx": 5550
+            },
+            "Profit": {
+                "Win": 135,
+                "Wdo": -15
+            },
+            "ArbitIndex": 615.02,
+            "Startstamp": 3245,
+            "Trades": 895,
+            "Updates": 1700
+        },
+        {
+            "Desc": {
+                "Dif": 0.15,
+                "Difm": 0.05,
+                "Mindif": 0,
+                "PropWin": 5,
+                "PropWdo": 2,
+                "Period": 200
+            },
+            "Position": {
+                "State": 1,
+                "Win": 5,
+                "WinPx": 115200,
+                "Wdo": 2,
+                "WdoPx": 5550
+            },
+            "Profit": {
+                "Win": 135,
+                "Wdo": -15
+            },
+            "ArbitIndex": 615.02,
+            "Startstamp": 3245,
+            "Trades": 30,
+            "Updates": 1700
+        },
+        {
+            "Desc": {
+                "Dif": 0.15,
+                "Difm": 0.05,
+                "Mindif": 0,
+                "PropWin": 5,
+                "PropWdo": 2,
+                "Period": 200
+            },
+            "Position": {
+                "State": 1,
+                "Win": 5,
+                "WinPx": 115200,
+                "Wdo": 2,
+                "WdoPx": 5550
+            },
+            "Profit": {
+                "Win": 135,
+                "Wdo": -15
+            },
+            "ArbitIndex": 615.02,
+            "Startstamp": 3245,
+            "Trades": 30,
+            "Updates": 1700
+        },
+        {
+            "Desc": {
+                "Dif": 0.15,
+                "Difm": 0.05,
+                "Mindif": 0,
+                "PropWin": 5,
+                "PropWdo": 2,
+                "Period": 200
+            },
+            "Position": {
+                "State": 1,
+                "Win": 5,
+                "WinPx": 115200,
+                "Wdo": 2,
+                "WdoPx": 5550
+            },
+            "Profit": {
+                "Win": 135,
+                "Wdo": -15
+            },
+            "ArbitIndex": 615.02,
+            "Startstamp": 3245,
+            "Trades": 30,
+            "Updates": 1700
+        }
+    ]
+}

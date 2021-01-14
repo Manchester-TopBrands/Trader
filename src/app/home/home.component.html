@@ -1,0 +1,183 @@
+<article>
+    <ul>
+        <li class="bg-purple">
+            <button>Bid</button>
+        </li>
+        <li class="bg-blue2">
+            <button>Spread</button>
+        </li>
+        <li class="bg-blue active">
+            <button>Ask</button>
+        </li>
+        <li class="bg-blue">
+            <button>%</button>
+        </li>
+    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th class="hide"></th>
+                <th class="bg-purple">Bid</th>
+                <th class="bg-blue2">spread</th>
+                <th class="bg-blue default">Ask</th>
+                <th class="bg-blue">%</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Arbit</td>
+                <td><span class="txt-top"></span><span class="txt-l">{{data.Quotes.Arbit.Bid | number: '1.4-4'}}</span>
+                </td>
+                <td><span class="txt-top"></span><span class="txt-l2">{{data.Quotes.Arbit.Ask - data.Quotes.Arbit.Bid |
+                      number: '1.4-4'}}</span></td>
+                <td class="default"><span class="txt-top"></span><span class="txt-l">{{data.Quotes.Arbit.Ask | number:
+                      '1.4-4'}}</span>
+                </td>
+                <td><span class="txt-l"></span><span class="txt-top"></span></td>
+            </tr>
+            <tr>
+                <td>Win</td>
+                <td><span class="txt-top"></span><span class="txt-l">{{data.Quotes.Win.Bid | number: '1.0-0'}}</span>
+                </td>
+                <td><span class="txt-top"></span><span class="txt-l2">{{data.Quotes.Win.Ask - data.Quotes.Win.Bid |
+                      number: '1.0-0'}}</span></td>
+                <td class="default"><span class="txt-top"></span><span class="txt-l">{{data.Quotes.Win.Ask |
+                      number: '1.0-0'}}</span></td>
+                <td><span class="txt-l">{{((data.Quotes.Win.Bid + data.Quotes.Win.Ask)/(2*data.Quotes.Win.LClose)-1)*100
+                      |
+                      number: '1.2-2'}}</span><span class="txt-top">%</span></td>
+            </tr>
+            <tr>
+                <td>Wdo</td>
+                <td><span class="txt-top"></span><span class="txt-l">{{data.Quotes.Wdo.Bid |
+                      number: '1.1-1'}}</span></td>
+                <td><span class="txt-top"></span><span class="txt-l2">{{data.Quotes.Wdo.Ask - data.Quotes.Wdo.Bid |
+                      number: '1.1-1'}}</span></td>
+                <td class="default"><span class="txt-top"></span><span class="txt-l">{{data.Quotes.Wdo.Ask |
+                      number: '1.1-1'}}</span></td>
+                <td><span class="txt-l">{{((data.Quotes.Wdo.Bid + data.Quotes.Wdo.Ask)/(2*data.Quotes.Wdo.LClose)-1)*100
+                      |
+                      number: '1.2-2'}}</span><span class="txt-top">%</span></td>
+            </tr>
+            <tr>
+                <td>Ewz</td>
+                <td><span class="txt-top"></span><span class="txt-l">{{data.Quotes.Ewz.Bid |
+                      number: '1.2-2'}}</span></td>
+                <td><span class="txt-top"></span><span class="txt-l2">{{data.Quotes.Ewz.Ask - data.Quotes.Ewz.Bid |
+                      number: '1.2-2'}}</span></td>
+                <td class="default"><span class="txt-top"></span><span class="txt-l">{{data.Quotes.Ewz.Ask |
+                      number: '1.2-2'}}</span></td>
+                <td><span class="txt-l">{{((data.Quotes.Ewz.Bid + data.Quotes.Ewz.Ask)/(2*data.Quotes.Ewz.LClose)-1)*100
+                      |
+                      number:'1.2-2'}}</span><span class="txt-top">%</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <td colspan="1" class="sep">Status: {{data.Status}}</td>
+        </tr>
+        <tbody *ngFor="let d of data.Strategies">
+            <tr>
+                <td colspan="1" class="sep">Strategy</td>
+                <td colspan="4" class="sep3"></td>
+            </tr>
+            <tr>
+                <td colspan="5" class="sep2">{{d.Desc.Dif}}, {{d.Desc.Difm}}, {{d.Desc.Mindif}}, {{d.Desc.Period }}
+                </td>
+            </tr>
+            <tr>
+                <td>pos:</td>
+                <td><span class="txt-top"></span><span class="txt-l">{{d.Position.State}}</span>
+                </td>
+                <td><span class="txt-top"></span><span class="txt-l2">arbit</span></td>
+                <td class="default"><span class="txt-top"></span><span class="txt-l">{{d.ArbitIndex | number:
+                      '1.2-2'}}</span>
+                </td>
+                <td><span class="txt-top"></span><span class="txt-l">({{data.Quotes.Arbit.MaxBid-d.ArbitIndex | number:
+                      '1.2-2'}} /
+                      {{data.Quotes.Arbit.MinAsk-d.ArbitIndex | number: '1.2-2'}})</span></td>
+            </tr>
+            <tr>
+                <td><span class="txt-top"></span><span class="txt-l">instr</span>
+                    <td><span class="txt-top"></span><span class="txt-l">size</span>
+                    </td>
+                    <td><span class="txt-top"></span><span class="txt-l">avg px</span></td>
+                    <td class="default"><span class="txt-top"></span><span class="txt-l">rlzd pft</span>
+                    </td>
+                    <td><span class="txt-top"></span><span class="txt-l">open pft</span></td>
+                    <td><span class="txt-top"></span><span class="txt-l">total</span></td>
+            </tr>
+
+            <tr>
+                <td>Win</td>
+                <td><span class="txt-top"></span><span class="txt-l2">{{d.Position.Win}}</span>
+                </td>
+                <td><span class="txt-top"></span><span class="txt-l2">{{d.Position.WinPx | number:
+                      '1.2-2'}}</span>
+                </td>
+                <td class="default"><span class="txt-top"></span><span class="txt-l2">{{d.Profit.Win | number:
+                      '1.2-2'}}</span>
+                </td>
+                <td><span class="txt-top"></span><span class="txt-l2">{{d.Position.Win>0 ? (data.Quotes.Win.Bid -
+                      d.Position.WinPx)*d.Position.Win/5 :
+                      (data.Quotes.Win.Ask-d.Position.WinPx)*d.Position.Win/5}}</span>
+                </td>
+                <td>{{d.Position.Win>0 ? (data.Quotes.Win.Bid - d.Position.WinPx)*d.Position.Win/5 : (data.Quotes.Win.Ask-d.Position.WinPx)*d.Position.Win/5 + d.Profit.Win | number:'1.2-2'}}</td>
+            </tr>
+
+            <tr>
+                <td>Wdo</td>
+                <td><span class="txt-top"></span><span class="txt-l2"> {{d.Position.Wdo}}</span>
+                </td>
+                <td><span class="txt-top"></span><span class="txt-l2">{{d.Position.WdoPx | number:
+                      '1.1-1'}}</span>
+                </td>
+                <td class="default"><span class="txt-top"></span><span class="txt-l2">{{d.Profit.Wdo | number:
+                      '1.1-1'}}</span>
+                </td>
+                <td><span class="txt-top"></span><span class="txt-l2">{{d.Position.Wdo>0 ? (data.Quotes.Wdo.Bid -
+                      d.Position.WdoPx)*10*d.Position.Wdo : (data.Quotes.Wdo.Ask-d.Position.WdoPx)*d.Position.Wdo*10 |
+                      number:
+                      '1.1-1'}}</span>
+                </td>
+                <td>{{d.Position.Wdo>0 ? (data.Quotes.Win.Bid - d.Position.WdoPx)*d.Position.Wdo/5 : (data.Quotes.Win.Ask-d.Position.WdoPx)*d.Position.Wdo/5 + d.Profit.Wdo | number:'1.2-2'}}</td>
+            </tr>
+            <tr>
+                <th class="hide"></th>
+                <th class="hide"></th>
+                <th class="hide"></th>
+                <th class="hide"></th>
+            </tr>
+            <tr>
+                <td>{{data.Timestamp-d.Startstamp | minuteSeconds}}</td>
+                <td><span class="txt-top"></span><span class="txt-l">Trades:</span></td>
+                <td><span class="txt-top"></span><span class="txt-l">{{d.Trades}}
+                      ({{d.Trades*60/(data.Timestamp-d.Startstamp)| number:
+                      '1.2-2'}}/min)</span>
+                </td>
+                <td class="default"><span class="txt-top"></span><span class="txt-l">updates:</span></td>
+                <td><span class="txt-top"></span><span class="txt-l">{{d.Updates}}
+                      ({{d.Updates/(data.Timestamp-d.Startstamp )| number:
+                      '1.2-2'}}/s)</span>
+                </td>
+            </tr>
+            <br>
+        </tbody>
+
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</article>
